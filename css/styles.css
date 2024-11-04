@@ -20,16 +20,13 @@ header, footer, .separador {
     background-size: cover;
 }
 
-footerNos {
-    background: linear-gradient(45deg, #022002, #168d54, #33053e);
-    background-size: cover;
-}
+
 
 main {
     background-color: hsl(0, 0%, 20%); /* Fondo más oscuro para contrastar */
-    color: #ffffff; /* Color de texto blanco para mejor legibilidad */
+    color:white; /* Color de texto blanco para mejor legibilidad */
 
-    background-image: url(/images/fondoGeneral1.jpg);
+    background-image: url(../images/fondoGeneral1.jpg);
 }
 
 h2 {
@@ -37,29 +34,30 @@ h2 {
 }
 
 
-
 /* Sección Hero */
 .hero {
-    position: relative;
-    text-align: center;
-}
-
-.hero-img {
-    width: 100%;
-    height: auto;
+    position: relative; /* Asegúrate de que el contenedor sea relativo */
+    overflow: hidden; /* Evita que el contenido salga del contenedor */
+    height: 100vh; /* Establece la altura de la sección hero al 100% de la altura de la ventana */
+    background-image: url(../images/comida1.jpg); /* Imagen de fondo */
+    background-size: cover; /* Asegúrate de que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen en el contenedor */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5rem;
-    border-radius: 10px;
-    max-width: 90%; /* Limita el ancho para pantallas pequeñas */
+    position: relative; /* Permite que el texto esté por encima de la imagen */
+    z-index: 2; /* Mayor que el z-index de la imagen */
+    color: white; /* Cambia el color del texto si es necesario para mayor contraste */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados para un mejor estilo */
+    text-align: center; /* Centra el texto horizontalmente */
+    max-width: 600px; /* Limita el ancho de la caja de texto */
 }
+
 
 .hero-text h1 {
     font-size: 3rem;
@@ -133,10 +131,11 @@ h2 {
     gap: 1rem;
 }
 
+/* Ajusta el tamaño de las tarjetas de producto */
 .product-card {
     position: relative;
-    max-width: 550px;
-    flex: 1 1 calc(33.333% - 1rem); /* Cambia a 33.333% para tres columnas en pantallas grandes */
+    max-width: 300px; /* Cambia este valor según sea necesario */
+    flex: 1 1 calc(25% - 1rem); /* Cambia a 25% para cuatro columnas en pantallas grandes */
     margin: 0.8rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -144,23 +143,21 @@ h2 {
 
 .product-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(86, 22, 22, 0.2);
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
-    max-height: 250px;
+    height: 200px; /* Establecer una altura fija para todas las imágenes */
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
+/* Asegurar que el texto y el botón se alineen bien */
 .product-info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    position: relative;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(83, 83, 83, 0.878);
     color: #fff;
     border-radius: 0 0 8px 8px;
 }
@@ -169,10 +166,9 @@ h2 {
     margin: 0;
 }
 
-
-
 /* Botón ver catálogo */
 .view-catalog-button {
+    
     display: inline-block;
     padding: 0.8rem 1.5rem;
     margin-top: 1rem;
@@ -185,6 +181,7 @@ h2 {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
 }
 
 .view-catalog-button:hover {
@@ -192,6 +189,28 @@ h2 {
     text-decoration: none;
     color: white;
 }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 calc(50% - 1rem); /* Dos columnas en pantallas más pequeñas */
+    }
+
+    .product-card img {
+        height: 150px; /* Ajustar la altura de la imagen para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        flex: 1 1 100%; /* Una columna en dispositivos móviles */
+    }
+
+    .product-card img {
+        height: 120px; /* Ajustar la altura de la imagen para dispositivos móviles */
+    }
+}
+
 
 /* Sección de Videos */
 .video-section {
@@ -226,57 +245,87 @@ h2 {
     margin: 0 auto; /* Centrar el iframe */
 }
 
-/* Reseñas */
-.reviews {
+/* Estilos generales */
+.section-background {
     padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    background-color: #f8f9fa;
+    background-image: url(../images/fondoGeneral1.jpg);
 }
 
-.review {
-    width: calc(33.333% - 1rem); /* Ajusta el tamaño para tres columnas */
-    height: 200px;
-    background: rgb(189, 25, 25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border-radius: 5px;
-    overflow: hidden;
+.reviews {
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
 }
 
+.reviews h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Configuración de grid para el contenedor de las reseñas */
+.review-carousel {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Diseño responsive con grid */
+@media (min-width: 768px) {
+    .review-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .review-carousel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .review-carousel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Estilos de cada reseña */
+.review {
+    background-color: #ef1f1f;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.review:hover {
+    transform: scale(1.05);
+}
+
 .review i {
-    color: #ffdd44;
     font-size: 1.5rem;
+    color: #ffdd44;
     margin-bottom: 0.5rem;
 }
 
 .review p {
-    font-size: 0.9rem;
-    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
     margin: 0.5rem 0;
+    color: #ffffff;
 }
 
 .review span {
-    font-size: 0.8rem;
-    color: #000000;
+    font-size: 0.9rem;
+    color: #ffffff;
 }
 
-/* Carrusel de reseñas */
-.review-carousel {
-    display: flex;
-    gap: 2rem;
-    animation: scrollReviews 20s linear infinite;
-}
 
-@keyframes scrollReviews {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+
 
 /* Footer */
 footer {
@@ -375,7 +424,7 @@ footer {
 
 
 /* Fondo principal de la página contacto */
-.main-background {
+#main-background {
     background: url('../images/fondoComida1.avif') no-repeat center center fixed;
     background-size: cover;
 }
@@ -413,24 +462,67 @@ footer {
 }
 
 
-/* ICONO WPP LATERAL */
+/* Estilos para el contenedor del enlace de WhatsApp */
+.whatsapp-container {
+    position: fixed; /* Mantiene el contenedor fijo en la pantalla */
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px; /* Espacio desde la derecha */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* Estilos para el enlace de WhatsApp */
 .whatsapp-link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    text-decoration: none;
+    display: inline-block; /* Asegúrate de que el enlace se comporte como un bloque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformaciones y sombras */
 }
 
 .whatsapp-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    width: 50px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    transition: transform 0.3s ease; /* Transición suave para el icono */
 }
 
-.whatsapp-icon:hover {
-    transform: scale(1.1);
+/* Efecto de hover para el enlace */
+.whatsapp-link:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del icono al pasar el ratón */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra alrededor del icono */
+}
+
+/* Efecto de hover para el icono */
+.whatsapp-link:hover .whatsapp-icon {
+    transform: rotate(10deg); /* Rotación del icono al pasar el ratón */
+}
+
+
+/*CAJA DEL TEXTO DE NOSOTROS*/
+
+.caja-informativa {
+    background-color: rgba(80, 79, 79, 0.897); /* Fondo gris transparente */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px; /* Margen alrededor de la caja */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+
+/*alerta carrito*/
+
+.mensaje-carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00a126;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mensaje-carrito i {
+    font-size: 1.2em;
 }
