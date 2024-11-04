@@ -1,0 +1,436 @@
+/* Tipografía y fondo */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #828282;
+    background-color: #a2c552fb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    background-size: cover; /* Mantener el tamaño de fondo como está */
+}
+
+/* Color personalizado para header, footer y separador */
+header {
+    font-size: 1.4rem;
+}
+
+header, footer, .separador {
+    background: linear-gradient(45deg, #022002, #168d54, #33053e);
+    background-size: cover;
+}
+
+footerNos {
+    background: linear-gradient(45deg, #022002, #168d54, #33053e);
+    background-size: cover;
+}
+
+main {
+    background-color: hsl(0, 0%, 20%); /* Fondo más oscuro para contrastar */
+    color: #ffffff; /* Color de texto blanco para mejor legibilidad */
+
+    background-image: url(/images/fondoGeneral1.jpg);
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+/* Sección Hero */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5rem;
+    border-radius: 10px;
+    max-width: 90%; /* Limita el ancho para pantallas pequeñas */
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.order-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #e21515;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #00c47c;
+    transform: scale(1.05);
+    text-decoration: none;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.logo {
+    width: 120px;
+    height: auto; /* Cambia a auto para mantener la proporción */
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.nav-link {
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(23, 222, 199, 0.726);
+}
+
+/* Barra separadora */
+.separador {
+    width: 100%;
+    height: 75px;
+    border-radius: 5px;
+}
+
+/* Galería de Productos */
+.productos {
+    padding: 2rem;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.product-card {
+    position: relative;
+    max-width: 550px;
+    flex: 1 1 calc(33.333% - 1rem); /* Cambia a 33.333% para tres columnas en pantallas grandes */
+    margin: 0.8rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+.product-info h3 {
+    margin: 0;
+}
+
+
+
+/* Botón ver catálogo */
+.view-catalog-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    background-color: #e21515;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-catalog-button:hover {
+    background-color: #009f63;
+    text-decoration: none;
+    color: white;
+}
+
+/* Sección de Videos */
+.video-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.video-section h2 {
+    text-align: center; /* Asegura que el título esté centrado */
+    margin-bottom: 1rem;
+
+}
+
+.video-container {
+    width: 100%;
+    max-width: 800px; /* Limitar el ancho del video */
+    margin: 0 auto; /* Centrar el video */
+}
+
+.video-section iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    display: block; /* Asegura que el iframe se comporte como un bloque para centrarlo */
+    margin: 0 auto; /* Centrar el iframe */
+}
+
+/* Reseñas */
+.reviews {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.review {
+    width: calc(33.333% - 1rem); /* Ajusta el tamaño para tres columnas */
+    height: 200px;
+    background: rgb(189, 25, 25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.review i {
+    color: #ffdd44;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.review p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin: 0.5rem 0;
+}
+
+.review span {
+    font-size: 0.8rem;
+    color: #000000;
+}
+
+/* Carrusel de reseñas */
+.review-carousel {
+    display: flex;
+    gap: 2rem;
+    animation: scrollReviews 20s linear infinite;
+}
+
+@keyframes scrollReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Footer */
+footer {
+    background-color: #3a743a;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Formulario de contacto */
+.contact-form-section {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con 70% de opacidad */
+    padding: 40px; /* Espaciado interno aumentado */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 2rem auto; /* Centrar el formulario y margen superior */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para un efecto elevado */
+}
+
+/* Estilos para el título del formulario */
+.contact-form-section h2 {
+    color: white; /* Cambiar el color del título a negro */
+    margin-bottom: 1rem; /* Añadir margen inferior para espacio */
+    text-align: center; /* Centrar el título */
+}
+
+/* Etiquetas y textos en el formulario */
+.contact-form label,
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    color: #fff; /* Cambiar el color del texto a blanco */
+}
+
+
+
+/* Estilos para inputs y textarea */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%; /* Hacer que los inputs y textarea ocupen el 100% del ancho */
+    padding: 10px; /* Espaciado interno de los campos */
+    margin-bottom: 15px; /* Margen inferior entre campos */
+    border: 1px solid #168d54; /* Borde blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo claro pero transparente */
+    color: #000; /* Color del texto de los inputs a negro para mejor legibilidad */
+}
+
+/* Estilo específico para select */
+.contact-form select {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo claro y ligeramente transparente */
+}
+
+/* Estilos para el botón */
+.contact-form button {
+    background-color: #e21515; /* Color del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    width: 100%; /* Hacer que el botón ocupe el 100% del ancho */
+}
+
+/* Cambiar color al pasar el mouse sobre el botón */
+.contact-form button:hover {
+    background-color: #00c47c; /* Cambiar color al pasar el mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .contact-form-section {
+        padding: 20px; /* Reducir el espaciado interno en pantallas pequeñas */
+        margin: 1rem; /* Reducir margen en pantallas pequeñas */
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .contact-form button {
+        padding: 8px; /* Ajustar espaciado interno en campos y botón */
+    }
+
+    .contact-form button {
+        font-size: 16px; /* Aumentar el tamaño de fuente del botón */
+    }
+}
+
+
+/* Fondo principal de la página contacto */
+.main-background {
+    background: url('../images/fondoComida1.avif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Estilos sucursales */
+
+.sucursales {
+    padding: 20px 0;
+}
+
+.sucursal {
+    background-color: #08754b;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sucursal h3 {
+    font-weight: bold;
+}
+
+.map-responsive {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ICONO WPP LATERAL */
+.whatsapp-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
