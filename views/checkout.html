@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descripcion" content="Checkout para realizar la compra de productos saludables de Essenza Sana.">
+    <title>Essenza Sana - Checkout</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logofinal.png" alt="Logo Essenza Sana" class="logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html"><i class="bi bi-info-circle"></i> Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html"><i class="bi bi-box"></i> Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="bi bi-envelope"></i> Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sucursales.html"><i class="bi bi-geo-alt"></i> Sucursales</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout text-center">
+            <div class="summary-container">
+                <h1>Resumen de tu Compra</h1>
+                <div id="checkout-items" class="checkout-items">
+                    <!-- Aquí se generarán dinámicamente los productos del carrito como tabla -->
+                </div>
+                <div class="total-container">
+                    <h3 id="total-carrito">Subtotal: $0.00</h3>
+                </div>
+            </div>
+        </section>
+
+
+        <form id="checkout-form" action="https://formspree.io/f/xqaakdjb" method="POST" class="form-container" onsubmit="clearForm()">
+            <h2>Formulario del Pedido</h2>
+        
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+        
+            <button id="finalize-purchase" type="button" class="btn btn-primary">Finalizar Compra</button>
+        </form>
+
+    </main>
+    
+
+    <!-- Modal de confirmación de compra -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación de Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro de finalizar la compra?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmPurchase">Confirmar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de agradecimiento -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thankYouModalLabel">¡Gracias por tu Compra!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Tu compra ha sido realizada con éxito! Pronto recibirás un correo con los detalles.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-checkout">
+        <p>&copy; 2024 Essenza Sana - Darío Villar</p>
+        <p>Página con fines educativos</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <img src="../images/icons/instagram.png" alt="Instagram logo">
+            </a>
+            <a href="https://facebook.com/tuPerfil" target="_blank" aria-label="Facebook">
+                <img src="../images/icons/facebook.png" alt="Facebook logo">
+            </a>
+            <a href="https://github.com/tuPerfil" target="_blank" aria-label="GitHub">
+                <img src="../images/icons/github.png" alt="GitHub logo">
+            </a>
+            <a href="https://linkedin.com/in/tuPerfil" target="_blank" aria-label="LinkedIn">
+                <img src="../images/icons/linkedin.png" alt="LinkedIn logo">
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/checkout.js"></script>
+    <script src="../js/formCheckOut.js"></script>
+    
+</body>
+</html>
