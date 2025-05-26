@@ -1,3 +1,3 @@
 # Essenza Sana
 
-El propósito de esta página es hacer, quizás, realidad un emprendimiento de mi pareja que actualmente hace comidas o postres por encargo de manera más casera entre conocidos. La idea sería facilitar una página web donde se puedan hacer estos pedidos, que haya una estructura detrás del cobro eventualmente y que transparente toda la operación para que finalmente deje tranquilo tanto al comprador como a la que realiza los pedidos.
+El propósito de esta página es hacer, quizás, realidad la idea de un emprendimiento en donde se facilita una página web donde se puedan hacer pedidos de comidas ya hechas. La idea es que también que haya una estructura detrás del cobro eventualmente que procese los pagos de los pedidos. 
